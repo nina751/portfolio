@@ -1,57 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nouha Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nouha  | Portfolio</title>
 
+<link rel="stylesheet" href="style.css">
+
+</head>
+<button onclick="toggleDark()" class="dark-btn">
+    🌙
+</button>
 <body>
 
-<header>
-  <h1>Nouha 👩‍💻</h1>
-  <p>Web Developer | PHP | JavaScript | MySQL</p>
-</header>
 
-<section class="about">
-  <h2>About Me</h2>
-  <p>
-    I am a web development student passionate about building useful web applications.
-    I enjoy creating simple and functional systems using PHP and JavaScript.
-  </p>
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>Hi, I'm Noha Nina </h1>
+
+        <h2>Web Developer</h2>
+
+        <p>
+            Passionate web developer building modern and aesthetic web experiences.
+        </p>
+
+        <a href="#skills" class="btn">
+            Discover More
+        </a>
+    </div>
+
+    <div class="hero-image">
+        <img src="profile.jpg" alt="Noha Nina">
+    </div>
+
 </section>
+<section id="skills" class="skills hidden">  <h2>My Skills</h2>
 
-<section class="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>PHP</li>
-    <li>MySQL</li>
-  </ul>
+  <div class="skills-container">
+
+      <div class="skill-card">
+          <h3>🌸HTML</h3>
+          <p>Building structured web pages.</p>
+      </div>
+
+      <div class="skill-card">
+          <h3>🎀CSS</h3>
+          <p>Creating modern and responsive designs.</p>
+      </div>
+
+      <div class="skill-card">
+          <h3>🦋JavaScript</h3>
+          <p>Adding interactivity to websites.</p>
+      </div>
+
+      <div class="skill-card">
+          <h3>🌷PHP & MySQL</h3>
+          <p>Developing dynamic web applications.</p>
+      </div>
+
+  </div>
+ 
 </section>
+<section class="projects hidden">
+  <h2>My Projects</h2>
+   
 
-<section class="projects">
-  <h2>Projects</h2>
 
-  <div class="card">
-    <h3>School Registration System</h3>
-    <p>System to manage student registration for a private school.</p>
-    <p><b>Tech:</b> PHP, MySQL, HTML, CSS, JavaScript</p>
+  <div class="projects-container">
+
+      <div class="project-card">
+          <h3>🌸 School Registration System</h3>
+
+          <p>
+              A system to manage student registration for a private school.
+          </p>
+
+          <span>PHP • MySQL • HTML • CSS • JavaScript</span>
+      </div>
+
+      <div class="project-card">
+          <h3>🎀 Personal Portfolio Website</h3>
+
+          <p>
+              A personal portfolio showcasing my skills, projects and contact information.
+          </p>
+
+          <span>HTML • CSS • JavaScript</span>
+      </div>
+
   </div>
 
 </section>
+<section class="education hidden">
+      <h2>My Learning Path</h2>
 
-<section class="contact">
-  <h2>Contact</h2>
-  <p>Email: nohanina75@gmail.com</p>
-  <p>GitHub:https://github.com/nina751</p>
+  <div class="education-list">
+
+      <div class="edu-item">
+          <h3>▸  Information Systems Engineering</h3>
+          <p> . Analysis and management of information systems and business processes.</p>
+      </div>
+
+      <div class="edu-item">
+          <h3>▸ Software Engineering</h3>
+          <p> . Software design, development, testing and maintenance.</p>
+      </div>
+
+      <div class="edu-item">
+          <h3>▸ Web Development</h3>
+          <p> . Creating responsive websites using modern web technologies.</p>
+      </div>
+
+      <div class="edu-item">
+          <h3>▸ Knowledge Engineering</h3>
+          <p> . Knowledge representation, intelligent systems and reasoning techniques.</p>
+      </div>
+
+  </div>
+
 </section>
+<section class="contact hidden">
+    <h2>Contact Me</h2>
 
-<footer>
-  <p>© 2026 Noha Nina</p>
-</footer>
+    <p>I'm always open to new opportunities, collaborations, and exciting projects..</p>
 
+    <div class="contact-info">
+
+        <p>📧 nohanina75@gmail.com</p>
+
+        <p>💻 github.com/nina751</p>
+       
+    </div>
+
+</section>
+<script>
+    window.addEventListener("load", () => {
+    
+        const sections = document.querySelectorAll(".hidden");
+    
+        const observer = new IntersectionObserver((entries) => {
+    
+            entries.forEach(entry => {
+    
+                if(entry.isIntersecting){
+                    entry.target.classList.add("show");
+                }
+    
+            });
+    
+        }, {
+            threshold: 0.2
+        });
+    
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    
+    });
+    </script>
+    <script>
+        function toggleDark(){
+        
+            document.body.classList.toggle("dark");
+        
+            const btn=document.querySelector(".dark-btn");
+        
+            if(document.body.classList.contains("dark")){
+                btn.innerHTML="☀️";
+            }else{
+                btn.innerHTML="🌙";
+            }
+        
+        }
+        </script>
 </body>
 </html>
